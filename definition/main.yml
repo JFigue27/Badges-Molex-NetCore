@@ -1,0 +1,11 @@
+generator.version: ''
+project.version: ''
+projectName: Badges Molex Net Core
+description: ''
+frontends: []
+roles: []
+entities: []
+sublogics: {}
+components: []
+views: []
+env: null
