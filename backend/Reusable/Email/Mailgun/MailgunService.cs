@@ -1,9 +1,6 @@
 using Reusable.Attachments;
 using ServiceStack.Configuration;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
-using ServiceStack;
 using RestSharp;
 using System;
 using RestSharp.Authenticators;
@@ -19,10 +16,10 @@ namespace Reusable.EmailServices
             Bcc = new List<string>();
             TemplateParameters = new Dictionary<string, object>();
 
-            From = ConfigurationManager.AppSettings["mailgun.from"];
-            API_KEY = ConfigurationManager.AppSettings["mailgun.api.key"];
+            From = AppSettings.Get<string>("mailgun.from");
+            API_KEY = AppSettings.Get<string>("mailgun.api.key");
 
-            var url = ConfigurationManager.AppSettings["mailgun.api.url"];
+            var url = AppSettings.Get<string>("mailgun.api.url");
             if (!string.IsNullOrWhiteSpace(url))
                 Client = new RestClient
                 {
@@ -31,7 +28,7 @@ namespace Reusable.EmailServices
                 };
         }
 
-        public IAppSettings AppSettings { get; set; }
+        public static IAppSettings AppSettings { get; set; }
 
         public string From { get; set; }
         public string FromPassword { get; set; }
@@ -68,7 +65,7 @@ namespace Reusable.EmailServices
 
             request.AddParameter("subject", Subject);
 
-            string baseAttachmentsPath = ConfigurationManager.AppSettings["EmailAttachments"];
+            string baseAttachmentsPath = AppSettings.Get<string>("EmailAttachments");
             var attachments = AttachmentsIO.getAttachmentsFromFolder(AttachmentsFolder, "EmailAttachments");
             foreach (var attachment in attachments)
             {

@@ -1,13 +1,16 @@
 using Reusable.CRUD.Entities;
 using ServiceStack.DataAnnotations;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Reusable.CRUD.Contract
 {
     public abstract class BaseDocument : Trackable
     {
-        //virtual public bool IsLockedOut { get; set; }
+        //Optimistic Concurrency:
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
 
         virtual public string DocumentStatus { get; set; }
 

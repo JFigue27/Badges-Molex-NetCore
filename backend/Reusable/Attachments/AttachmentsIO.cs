@@ -4,7 +4,6 @@ using ServiceStack;
 using ServiceStack.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 
 namespace Reusable.Attachments
@@ -19,15 +18,15 @@ namespace Reusable.Attachments
             if (!string.IsNullOrWhiteSpace(folderName))
             {
                 bool useAttachmentsRelativePath = false;
-                string sUseAttachmentsRelativePath = ConfigurationManager.AppSettings["UseAttachmentsRelativePath"];
+                string sUseAttachmentsRelativePath = AppSettings.Get<string>("UseAttachmentsRelativePath");
                 if (!string.IsNullOrWhiteSpace(sUseAttachmentsRelativePath) && bool.TryParse(sUseAttachmentsRelativePath, out bool bUseAttachmentsRelativePath))
                     useAttachmentsRelativePath = bUseAttachmentsRelativePath;
 
                 string baseAttachmentsPath;
                 if (useAttachmentsRelativePath)
-                    baseAttachmentsPath = "~/".MapHostAbsolutePath() + ConfigurationManager.AppSettings[attachmentKind];
+                    baseAttachmentsPath = "~/".MapHostAbsolutePath() + AppSettings.Get<string>(attachmentKind);
                 else
-                    baseAttachmentsPath = ConfigurationManager.AppSettings[attachmentKind];
+                    baseAttachmentsPath = AppSettings.Get<string>(attachmentKind);
 
                 if (folderName != "" && Directory.Exists(baseAttachmentsPath + folderName.Trim()))
                 {
@@ -52,15 +51,15 @@ namespace Reusable.Attachments
             if (!string.IsNullOrWhiteSpace(folderName))
             {
                 bool useAttachmentsRelativePath = false;
-                string sUseAttachmentsRelativePath = ConfigurationManager.AppSettings["UseAttachmentsRelativePath"];
+                string sUseAttachmentsRelativePath = AppSettings.Get<string>("UseAttachmentsRelativePath");
                 if (!string.IsNullOrWhiteSpace(sUseAttachmentsRelativePath) && bool.TryParse(sUseAttachmentsRelativePath, out bool bUseAttachmentsRelativePath))
                     useAttachmentsRelativePath = bUseAttachmentsRelativePath;
 
                 string baseAttachmentsPath;
                 if (useAttachmentsRelativePath)
-                    baseAttachmentsPath = "~/".MapHostAbsolutePath() + ConfigurationManager.AppSettings[attachmentKind];
+                    baseAttachmentsPath = "~/".MapHostAbsolutePath() + AppSettings.Get<string>(attachmentKind);
                 else
-                    baseAttachmentsPath = ConfigurationManager.AppSettings[attachmentKind];
+                    baseAttachmentsPath = AppSettings.Get<string>(attachmentKind);
 
                 if (folderName != "" && Directory.Exists(baseAttachmentsPath + folderName.Trim()))
                 {
@@ -94,7 +93,7 @@ namespace Reusable.Attachments
             string currentPath;
 
             bool useAttachmentsRelativePath = false;
-            string sUseAttachmentsRelativePath = ConfigurationManager.AppSettings["UseAttachmentsRelativePath"];
+            string sUseAttachmentsRelativePath = AppSettings.Get<string>("UseAttachmentsRelativePath");
             if (!string.IsNullOrWhiteSpace(sUseAttachmentsRelativePath) && bool.TryParse(sUseAttachmentsRelativePath, out bool bUseAttachmentsRelativePath))
                 useAttachmentsRelativePath = bUseAttachmentsRelativePath;
 
@@ -206,11 +205,11 @@ namespace Reusable.Attachments
         public static void DeleteFile(Attachment file)
         {
             bool useAttachmentsRelativePath = false;
-            string sUseAttachmentsRelativePath = ConfigurationManager.AppSettings["UseAttachmentsRelativePath"];
+            string sUseAttachmentsRelativePath = AppSettings.Get<string>("UseAttachmentsRelativePath");
             if (!string.IsNullOrWhiteSpace(sUseAttachmentsRelativePath) && bool.TryParse(sUseAttachmentsRelativePath, out bool bUseAttachmentsRelativePath))
                 useAttachmentsRelativePath = bUseAttachmentsRelativePath;
 
-            string baseAttachmentsPath = ConfigurationManager.AppSettings[file.AttachmentKind];
+            string baseAttachmentsPath = AppSettings.Get<string>(file.AttachmentKind);
 
             string filePath;
             if (useAttachmentsRelativePath)
@@ -243,9 +242,9 @@ namespace Reusable.Attachments
 
         public static string GetPath(Attachment attachment)
         {
-            var baseAttachmentsPath = ConfigurationManager.AppSettings[attachment.AttachmentKind];
+            var baseAttachmentsPath = AppSettings.Get<string>(attachment.AttachmentKind);
 
-            if (bool.TryParse(ConfigurationManager.AppSettings["UseAttachmentsRelativePath"], out bool UseAttachmentsRelativePath) && UseAttachmentsRelativePath)
+            if (bool.TryParse(AppSettings.Get<string>("UseAttachmentsRelativePath"), out bool UseAttachmentsRelativePath) && UseAttachmentsRelativePath)
                 return "~/".MapHostAbsolutePath() + baseAttachmentsPath + @"/" + attachment.Directory + @"/" + attachment.FileName;
             else
                 return baseAttachmentsPath + @"\" + attachment.Directory + @"\" + attachment.FileName;

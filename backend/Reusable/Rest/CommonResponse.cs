@@ -1,4 +1,5 @@
 using System;
+
 namespace Reusable.Rest
 {
     public class CommonResponse
@@ -8,18 +9,22 @@ namespace Reusable.Rest
         public object Result { get; set; }
         public object AdditionalData { get; set; }
         public string ErrorType { get; set; }
+
+
         public CommonResponse(object result)
         {
             ErrorThrown = false;
             ResponseDescription = "";
             Result = result;
         }
+
         public CommonResponse()
         {
             ErrorThrown = false;
             ResponseDescription = "";
             Result = null;
         }
+
         public CommonResponse Error(KnownError knownError)
         {
             ErrorThrown = true;
@@ -35,6 +40,7 @@ namespace Reusable.Rest
             }
             return this;
         }
+
         public CommonResponse Error(string sError, object result)
         {
             ErrorThrown = true;
@@ -43,6 +49,7 @@ namespace Reusable.Rest
             ErrorType = "MESSAGE";
             return this;
         }
+
         public CommonResponse Error(string sError)
         {
             ErrorThrown = true;
@@ -50,6 +57,7 @@ namespace Reusable.Rest
             ErrorType = "MESSAGE";
             return this;
         }
+
         public CommonResponse Success(object oResult, string sMessage = "OK")
         {
             ErrorThrown = false;
@@ -57,6 +65,7 @@ namespace Reusable.Rest
             ResponseDescription = sMessage;
             return this;
         }
+
         public CommonResponse Success(object oResult, object oAdditionalData)
         {
             ErrorThrown = false;
@@ -65,6 +74,7 @@ namespace Reusable.Rest
             AdditionalData = oAdditionalData;
             return this;
         }
+
         public CommonResponse Success(string sMessage = "OK")
         {
             ErrorThrown = false;
@@ -72,6 +82,7 @@ namespace Reusable.Rest
             return this;
         }
     }
+
     public class ValidationResult
     {
         public long EntityId { get; set; }
@@ -79,26 +90,33 @@ namespace Reusable.Rest
         public string FriendlyIdentifier { get; set; }
         public string Description { get; set; }
     }
+
     public class KnownError : Exception
     {
         public KnownError(string message) : base(message)
         {
             Type = TypeError.MESSAGE;
         }
+
         public KnownError(string message, TypeError type) : base(message)
         {
             Type = type;
         }
+
         public enum TypeError
         {
             MESSAGE, //Just popup an error message
             INCIDENT //Needs front-end specific handling
         }
+
         public TypeError Type { get; set; }
+
     }
+
     public class CannotCreateBecauseAlreadyExists : Exception
     {
         public object ExistingEntity { get; set; }
+
         public CannotCreateBecauseAlreadyExists(object ExistingEntity)
         {
             this.ExistingEntity = ExistingEntity;
