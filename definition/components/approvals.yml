@@ -1,0 +1,31 @@
+name: approvals
+entity: Approval
+type: list
+layout:
+  - container xl:
+      - h4: Approvals
+      - pagination
+      - table:
+          columns:
+            - row:
+                - button: openItem | blank
+                - button: removeItem
+            - Status
+            - Requested Date
+            - Request Description
+            - Title
+            - Type
+            - Hyperlink
+            - Closed At
+            - Due Date
+  - nav:
+      - search
+      - space
+      - button fab: create
+slots:
+  dependencies: |
+    import { IconButton } from '@material-ui/core';
+  afterCreateCheckout: |
+    this.navigateTo('/approval?id=' + entity.Id);
+  onOpenItem: |
+    this.navigateTo('/approval?id=' + item.Id);

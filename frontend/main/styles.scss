@@ -1,0 +1,281 @@
+@import './public/static/styles/bootstrap.scss';
+
+@import './node_modules/@syncfusion/ej2-base/styles/material.css';
+@import './node_modules/@syncfusion/ej2-icons/styles/material.css';
+@import './node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import './node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import './node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import './node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import './node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import './node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import './node_modules/@syncfusion/ej2-richtexteditor/styles/material.css';
+
+//Calendar
+@import './node_modules/@syncfusion/ej2-react-calendars/styles/material.css';
+
+// Theme Styles
+@import './styles-theme.scss';
+
+body {
+  font-family: 'Roboto';
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.filled {
+  // background: #e8e8e8;
+  .MuiInputBase-input {
+    border: 1px solid transparent;
+    padding: 3px;
+    // font-size: 0.7em;
+    height: 26px;
+    margin: 0;
+  }
+}
+
+.filled .MuiInputBase-input:focus {
+  // outline: 2px;
+  // border: darkgray 1px solid;
+  background: #deedf8;
+  border: 1px solid #2185d0;
+  // height: 17px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.Person-Chip {
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.Approved-Chip {
+  background-color: green !important;
+  color: white !important;
+}
+
+.Rejected-Chip {
+  background-color: red !important;
+  color: white !important;
+}
+
+.Approval-Approved {
+  background-color: lightgreen;
+}
+
+.Approval-Rejected {
+  // background-color: darkgray;
+  color: darkred;
+  border: darkred;
+}
+
+.Sheet {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px;
+}
+
+.SheetLandscape {
+  max-width: 1600px;
+  margin: auto;
+  padding: 15px;
+}
+
+// .MuiPaper-root {
+//   z-index: 120 !important;
+// }
+
+.MainAppBar {
+  // z-index: 1500 !important;
+}
+
+.CellEditable {
+  background: aliceblue;
+}
+
+.well {
+  // margin: 10px 0 !important;
+  padding: 0;
+  padding-top: 5px;
+  border: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  // background-color: lightgray;
+}
+
+.BottomToolbar {
+  .MuiToolbar-root {
+    & > button {
+      margin-left: 5px;
+      min-width: inherit;
+      .MuiIcon-root {
+        font-size: 1.3em;
+      }
+    }
+    .MuiGrid-item {
+      margin-left: 10px;
+      .MuiTypography-root {
+        line-height: 1.5;
+      }
+    }
+    .MuiButton-contained {
+      span {
+        margin-right: 3px;
+      }
+    }
+    .MuiButtonGroup-root {
+      margin-left: 3px;
+    }
+  }
+
+  .FloatingButton {
+    width: 70px;
+    button {
+      position: fixed;
+      bottom: 25px;
+      right: 10px;
+      z-index: 500;
+      width: 70px;
+      height: 70px;
+      .MuiIcon-root {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+.Attachments {
+  padding: 3px;
+  border: solid #e0e0e0 3px;
+  border-style: dotted;
+  outline: none;
+  .AttachmentsRow {
+    padding-left: 3px;
+    border-bottom: 1px solid lightgray;
+  }
+  .AttachmentsRow:hover {
+    background: lightgray;
+  }
+}
+
+.BottomSheetButton {
+  padding: 15px !important;
+}
+
+.pagination {
+  font-size: 0.8em;
+  margin: 10px 0;
+  li a {
+    padding: 4px 8px;
+  }
+}
+
+.e-richtexteditor .e-rte-content .e-content,
+.e-richtexteditor .e-source-content .e-content {
+  min-height: 75px !important;
+}
+
+.RichTextInTable {
+  padding: 0 !important;
+  .e-rte-content {
+    border: none !important;
+  }
+}
+
+.TableSmall {
+  tr {
+    td {
+      font-size: 0.9em;
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+// Loader
+
+.lds-grid {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.lds-grid div {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #000;
+  animation: lds-grid 1.2s linear infinite;
+}
+
+.lds-grid div:nth-child(1) {
+  top: 6px;
+  left: 6px;
+  animation-delay: 0s;
+}
+
+.lds-grid div:nth-child(2) {
+  top: 6px;
+  left: 26px;
+  animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(3) {
+  top: 6px;
+  left: 45px;
+  animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(4) {
+  top: 26px;
+  left: 6px;
+  animation-delay: -0.4s;
+}
+
+.lds-grid div:nth-child(5) {
+  top: 26px;
+  left: 26px;
+  animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(6) {
+  top: 26px;
+  left: 45px;
+  animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(7) {
+  top: 45px;
+  left: 6px;
+  animation-delay: -0.8s;
+}
+
+.lds-grid div:nth-child(8) {
+  top: 45px;
+  left: 26px;
+  animation-delay: -1.2s;
+}
+
+.lds-grid div:nth-child(9) {
+  top: 45px;
+  left: 45px;
+  animation-delay: -1.6s;
+}
+
+@keyframes lds-grid {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,84 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\jjfigueroa\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\jjfigueroa\OneDrive - kochind.com\OneDrive\OneDrive - kochind.com\ToolsDev\bin;C:\Users\jjfigueroa\OneDrive - kochind.com\OneDrive\OneDrive - kochind.com\ToolsDev\vendor\bin;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\TEC-IT\TBarCode\11.6\;C:\Program Files\Common Files\TEC-IT\TBarCode\11.6\;C:\Ruby24-x64\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\dotnet\;C:\Users\jjfigueroa\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\jjfigueroa\.dotnet\tools;C:\Users\jjfigueroa\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\jjfigueroa\AppData\Local\Microsoft\WindowsApps;C:\Users\jjfigueroa\AppData\Roaming\npm;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\jjfigueroa\OneDrive - kochind.com\OneDrive\OneDrive - kochind.com\ToolsDev
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: read ECONNRESET
+      at TLSWrap.onStreamRead (internal/stream_base_commons.js:111:27)
+
+npm manifest: 
+  {
+    "name": "react-frontend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "next",
+      "build": "next build",
+      "start": "next start",
+      "export": "next export",
+      "analyze": "cross-env BUNDLE_ANALYZE=both next build",
+      "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+      "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build",
+      "now-build": "next build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "engines": {
+      "node": "10.x"
+    },
+    "dependencies": {
+      "@date-io/moment": "^1.3.11",
+      "@handsontable/react": "^3.0.0",
+      "@material-ui/core": "^4.7.0",
+      "@material-ui/icons": "^4.4.1",
+      "@material-ui/lab": "^4.0.0-alpha.39",
+      "@material-ui/pickers": "^3.2.5",
+      "@next/bundle-analyzer": "^9.1.4",
+      "@syncfusion/ej2-react-calendars": "^17.2.49",
+      "@syncfusion/ej2-react-grids": "^17.2.49",
+      "@syncfusion/ej2-react-richtexteditor": "^17.2.49",
+      "@types/jquery": "^3.3.31",
+      "@types/node": "^12.12.12",
+      "@types/react": "^16.9.13",
+      "@zeit/next-css": "^1.0.1",
+      "@zeit/next-sass": "^1.0.1",
+      "cross-env": "^6.0.3",
+      "handsontable": "^7.1.1",
+      "isomorphic-fetch": "^2.2.1",
+      "jquery": "^3.4.1",
+      "moment": "^2.24.0",
+      "next": "^9.0.5",
+      "next-fonts": "^0.19.0",
+      "node-sass": "^4.11.0",
+      "notistack": "^0.9.0",
+      "react": "^16.9.0",
+      "react-beautiful-dnd": "^12.1.1",
+      "react-dom": "^16.9.0",
+      "react-draggable": "^4.0.2",
+      "react-dropzone": "^10.2.1",
+      "react-js-pagination": "^3.0.2",
+      "react-select": "^3.0.4",
+      "react-swipeable-views": "^0.13.3",
+      "typeface-roboto": "^0.0.75",
+      "typescript": "^3.7.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

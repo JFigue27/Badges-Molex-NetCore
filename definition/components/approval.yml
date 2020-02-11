@@ -1,0 +1,101 @@
+name: approval
+type: form
+entity: Approval
+layout:
+  - container md:
+      - sheet:
+          - row:
+              - '5':
+                  - bind: Requested Date
+                  - html: '{baseEntity.Track && `Created by ${baseEntity.Track.CreatedBy}`}'
+              - space
+              - well:
+                  - bind well: Status
+          - row:
+              - field: Due Date
+              - space
+          - field: Title
+          - chips accounts: Approvers
+          - richtext: Request Description
+          - html: '<Link href={baseEntity.Hyperlink}>Link</Link>'
+      - nav:
+          - button: request()
+          - button: approve()
+          - button: reject()
+          - space
+          - button: close()
+          - button: save
+slots:
+  endpoint: |
+    [Route("/Approval/GetOrCreate", "POST")]
+        public class GetOrCreateApproval : Approval { }
+        public object Post(GetOrCreateApproval request)
+        {
+            var entity = request.ConvertTo<Approval>();
+            return InTransaction(db =>
+            {
+                return Logic.GetOrCreate(entity);
+            });
+        }
+
+        [Route("/Approval/Request", "POST")]
+        public class RequestApproval : Approval { }
+        public object Post(RequestApproval request)
+        {
+            var approval = request.ConvertTo<Approval>();
+            return InTransaction(db =>
+            {
+                Logic.RequestApproval(approval);
+                return new CommonResponse(Logic.GetById(approval.Id));
+            });
+        }
+
+        [Route("/Approval/Approve/{Id}", "POST")]
+        public class ApproveApproval : Approval { }
+        public object Post(ApproveApproval request)
+        {
+            var approval = request.ConvertTo<Approval>();
+            return InTransaction(db =>
+            {
+                Logic.SetStatus(approval.Id, "Approved");
+                return new CommonResponse(Logic.GetById(approval.Id));
+            });
+        }
+
+        [Route("/Approval/Reject/{Id}", "POST")]
+        public class RejectApproval : Approval { }
+        public object Post(RejectApproval request)
+        {
+            var approval = request.ConvertTo<Approval>();
+            return InTransaction(db =>
+            {
+                Logic.SetStatus(approval.Id, "Rejected");
+                return new CommonResponse(Logic.GetById(approval.Id));
+            });
+        }
+
+        [Route("/Approval/Cancel/{Id}", "POST")]
+        public class CancelApproval : Approval { }
+        public object Post(CancelApproval request)
+        {
+            var approval = request.ConvertTo<Approval>();
+            return InTransaction(db =>
+            {
+                Logic.Cancel(approval.Id);
+                return new CommonResponse();
+            });
+        }
+  dependencies: |
+    import { Paper, ButtonGroup, Link } from '@material-ui/core';
+  load: |
+    if (this.props.router.query.id) {
+      this.load(this.props.router.query.id);
+    } else {
+      let template = this.props.router.query || {};
+      template.Status = 'New';
+      this.load(template);
+    }
+  js: |
+    request = () => {
+        this.service.Post('Request', this.state.baseEntity);
+    };

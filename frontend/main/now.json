@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "name": "Badges Molex Net Core",
+  "builds": [{ "src": "package.json", "use": "@now/next" }]
+}

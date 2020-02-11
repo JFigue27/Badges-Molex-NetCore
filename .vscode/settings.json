@@ -1,7 +1,9 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#382B1F",
-        "titleBar.activeBackground": "#4F3D2C",
-        "titleBar.activeForeground": "#FCFBF9"
-    }
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#382B1F",
+    "titleBar.activeBackground": "#4F3D2C",
+    "titleBar.activeForeground": "#FCFBF9"
+  },
+  "editor.formatOnSave": false,
+  "prettier.configPath": ".vscode/.prettierrc"
 }
