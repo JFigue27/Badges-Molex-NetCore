@@ -177,6 +177,7 @@ namespace MyApp
             ///start:generated:di<<<
             container.RegisterAutoWired<ActivityLogic>().ReusedWithin(ReuseScope.Request);
             container.RegisterAutoWired<ApprovalLogic>().ReusedWithin(ReuseScope.Request);
+            container.RegisterAutoWired<BadgeLogic>().ReusedWithin(ReuseScope.Request);
             container.RegisterAutoWired<EmailLogic>().ReusedWithin(ReuseScope.Request);
             container.RegisterAutoWired<AdvancedSortLogic>().ReusedWithin(ReuseScope.Request);
             container.RegisterAutoWired<ApplicationTaskLogic>().ReusedWithin(ReuseScope.Request);

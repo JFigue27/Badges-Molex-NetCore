@@ -1,4 +1,10 @@
 name: main
 displayName: Main
-pages: {}
-components: []
+pages:
+  badges: badges
+components:
+  - badge
+  - badges
+  - badgeCard
+  - badgeNew
+  - home

@@ -5,8 +5,8 @@ let AuthURL = '%%AUTHURL%%';
 
 //DEVELOPMENT:
 let Dev_BaseURL = 'http://localhost:5000/';
-let Dev_UniversalCatalogsURL = 'http://localhost:5000/';
-let Dev_AuthURL = 'https://apps.capsonic.com/Auth/';
+let Dev_UniversalCatalogsURL = 'http://jucvwdoccnl01/UniCatNetCore/';
+let Dev_AuthURL = 'http://jucvwdoccnl01/Accounts/';
 
 //
 BaseURL = BaseURL == '%%BASEURL%%' ? Dev_BaseURL : BaseURL;

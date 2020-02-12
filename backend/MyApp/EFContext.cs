@@ -23,6 +23,7 @@ namespace MyApp.Database
         ///start:generated:dbsets<<<
         public virtual DbSet<Activity> Activitys { get; set; }
         public virtual DbSet<Approval> Approvals { get; set; }
+        public virtual DbSet<Badge> Badges { get; set; }
         public virtual DbSet<Email> Emails { get; set; }
         public virtual DbSet<AdvancedSort> AdvancedSorts { get; set; }
         public virtual DbSet<ApplicationTask> ApplicationTasks { get; set; }

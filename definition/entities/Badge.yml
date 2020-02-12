@@ -1,0 +1,31 @@
+name: Badge
+type: document
+fields:
+  Value as Barcode: string
+  FirstName: string
+  LastName: string
+  Company: string
+  Citizenship: string
+  Visiting: string
+  CheckIn: datetime
+  CheckOut: datetime?
+relationships:
+  oneToParent: []
+  oneToMany: []
+  manyToOne: []
+slots:
+  ctor: ''
+  properties: ''
+  imports: ''
+  init: ''
+  onCreateInstance: ''
+  onGetList: ''
+  onGetSingle: ''
+  beforeSave: ''
+  afterSave: ''
+  beforeRemove: ''
+  adapterOut: ''
+  logic: ''
+  serviceImports: ''
+  endpoints: ''
+  endpointsRoutes: ''

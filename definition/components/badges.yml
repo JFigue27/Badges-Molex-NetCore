@@ -1,0 +1,25 @@
+name: badges
+type: list
+entity: Badge
+layout:
+  - title: 'This is the [badges] component.'
+slots:
+  dependencies: ''
+  config: ''
+  interface: ''
+  ctor: ''
+  load: ''
+  afterLoad: ''
+  afterCreate: ''
+  afterCreateCheckout: ''
+  afterSave: ''
+  beforeSave: ''
+  beforeCheckin: ''
+  onChange: ''
+  js: ''
+  render: ''
+  afterRemove: ''
+  onOpenItem: ''
+  adapterIn: ''
+  adapterOut: ''
+  service: ''
