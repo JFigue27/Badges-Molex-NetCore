@@ -20,7 +20,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="ServiceStack" Version="5.7.0" />
+    <PackageReference Include="ServiceStack" Version="5.9.2" />
     <PackageReference Include="ServiceStack.Admin.Core" Version="5.7.0" />
     <PackageReference Include="ServiceStack.Api.OpenApi.Core" Version="5.7.0" />
     <PackageReference Include="ServiceStack.OrmLite.SqlServer.Core" Version="5.7.0" />
